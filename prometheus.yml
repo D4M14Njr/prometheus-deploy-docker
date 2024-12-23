@@ -3,3 +3,10 @@ scrape_configs:
   scrape_interval: 5s
   static_configs:
   - targets: ['cadvisor:8080']
+
+- job_name: servers
+  scrape_interval: 5s
+  static_configs:
+  - targets:
+    - 192.168.109:9100
+
