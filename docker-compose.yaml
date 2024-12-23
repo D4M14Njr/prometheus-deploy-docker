@@ -28,6 +28,10 @@ services:
 
   grafana:
     image: grafana/grafana
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
     depends_on:
       - prometheus
     ports:
@@ -36,4 +40,5 @@ services:
       - monitoring
 
 networks:
-  monitoring: {}
+  monitoring:
+    name: monitoring
